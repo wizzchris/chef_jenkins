@@ -1,0 +1,32 @@
+---
+driver:
+  name: ec2
+  security_group_ids: ["sg-02f107d41422f3fbc"]
+  region: eu-west-1
+  require_chef_omnibus: true
+  associate_public_ip: true
+  interface: public
+
+transport:
+  connection_timeout: 10
+  connection_retries: 5
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-18.04
+    driver:
+      image_id: ami-035966e8adab4aaad
+    transport:
+      username: ubuntu
+
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:

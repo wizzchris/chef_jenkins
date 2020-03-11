@@ -14,3 +14,4 @@ run_list 'mongodb_cookbook::default'
 
 # Specify a custom source for a single cookbook:
 cookbook 'mongodb_cookbook', path: '.'
+cookbook 'build-essential', '~> 8.2.1', :supermarket
