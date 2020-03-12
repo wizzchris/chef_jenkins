@@ -13,6 +13,8 @@ transport:
 
 provisioner:
   name: chef_zero
+  client_rb:
+    chef_license: accept
 
 verifier:
   name: inspec
@@ -30,5 +32,4 @@ suites:
       inspec_tests:
         - test/integration/default
     attributes:
-    
-chef_license: accept
+
