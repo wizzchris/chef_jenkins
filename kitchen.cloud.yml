@@ -30,3 +30,5 @@ suites:
       inspec_tests:
         - test/integration/default
     attributes:
+    
+chef_license: accept
